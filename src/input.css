@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Autorich";
+  src: url("./fonts/autorich_sans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer components {
+  .card {
+    @apply max-w-sm rounded overflow-hidden shadow-lg bg-white p-6;
+  }
+
+  .card-title {
+    @apply text-xl font-bold mb-2;
+  }
+
+  .card-text {
+    @apply text-gray-700;
+  }
+
+  .brand {
+    @apply font-autorich text-4xl text-white mt-5 flex items-center mb-4;
+  }
+
+  #mode-transition-overlay {
+    @layer components {
+      #mode-transition-overlay {
+        @apply fixed inset-0 z-50 bg-light-background dark:bg-dark-background opacity-0;
+        transition: opacity 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .mode-transition-overlay {
+    @apply fixed inset-0 bg-black opacity-0 transition-opacity duration-500 z-[9999];
+  }
+
+  .opacity-fade-in {
+    @apply opacity-100;
+  }
+
+  .opacity-fade-out {
+    @apply opacity-0;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 2s infinite;
+  }
+
+  .apexcharts-yaxis-label tspan,
+  .apexcharts-xaxis-label tspan {
+    @apply text-light-text dark:text-dark-text;
+  }
+  .sidebar {
+    flex-shrink: 0; /* Prevent the sidebar from shrinking */
+    width: 20rem; /* Fixed width for desktop (w-80) */
+    position: fixed; /* Keep it fixed when scrolling */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Allow scrolling for overflowing content */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%); /* Hide sidebar by default on mobile */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+
+  .mobile-menu-overlay.show {
+    display: block;
+  }
+
+  main {
+    margin-left: 20rem; /* Offset the main content by the sidebar's width */
+    flex-grow: 1; /* Make the main content fill the remaining space */
+    .main-content {
+      margin-left: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    main {
+      @apply p-4, mx-20;
+    }
+
+    .main-content {
+      width: 100%;
+      margin-left: 0;
+      padding: 1rem;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100vw; /* Change from 100vw to a fixed width */
+
+      z-index: 50;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    /* Add overlay styles */
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: fit-content;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+    }
+
+    .mobile-menu-overlay.show {
+      display: block;
+    }
+
+    button {
+      @apply w-fit-content;
+    }
+    /* Adjust hamburger button styles */
+    .menu-trigger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem; /* Keep it on the left */
+      padding: 0.5rem;
+      z-index: 60;
+      border-radius: 0.375rem;
+      width: 10px;
+      background: transparent;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 60;
+    }
+  }
+}
