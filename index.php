@@ -1,58 +1,24 @@
 <?php
 
-$currentPage = "Dashboard"; // Replace with a dynamic value based on the URL or user action.
+$currentPage = ["Dashboard", "Overview"]; // Replace with a dynamic value based on the URL or user action.
+include 'components/menu_data.php';
 
-
-$menuData = [
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75"/></svg>',
-        "title" => "Dashboard",
-        "subItems" => ["Overview", "Reports", "Export Data"]
-    ],
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m1-17.87a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85"/></svg>',
-        "title" => "Policy Holders",
-        "subItems" => ["All Policy Holders", "Add Policy"]
-    ],
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M11.47 22c-3.992 0-5.989 0-7.23-1.172C3 19.657 3 17.771 3 14v-4c0-3.771 0-5.657 1.24-6.828C5.481 2 7.478 2 11.47 2h1.06c3.993 0 5.989 0 7.23 1.172C21 4.343 21 6.229 21 10m-9.5 12H13M8 7h8m-8 5h5"/><path d="m17.5 18.59l-.902 3.153a.2.2 0 0 0 .268.235l1.985-.793a.4.4 0 0 1 .298 0l2.004.8a.2.2 0 0 0 .27-.226l-.764-3.268M22 15.995A3 3 0 0 0 19 13c-1.657 0-3 1.341-3 2.995a2.997 2.997 0 0 0 3 2.995c1.657 0 3-1.34 3-2.995"/></g></svg>',
-        "title" => "Policies",
-        "subItems" => ["All Policies", "Policy Types", "Add New Policy"]
-    ],
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048""><path fill="currentColor" d="M384 1152q27 0 50 10t40 27t28 41t10 50q0 27-10 50t-27 40t-41 28t-50 10q-27 0-50-10t-40-27t-28-41t-10-50q0-27 10-50t27-40t41-28t50-10m1280 0q27 0 50 10t40 27t28 41t10 50q0 27-10 50t-27 40t-41 28t-50 10q-27 0-50-10t-40-27t-28-41t-10-50q0-27 10-50t27-40t41-28t50-10m347-256l-66 65q2 5 10 30t19 59t25 73t24 71t18 54t7 22v650q0 27-10 50t-27 40t-41 28t-50 10h-128q-27 0-50-10t-40-27t-28-41t-10-50H384q0 27-10 50t-27 40t-41 28t-50 10H128q-27 0-50-10t-40-27t-28-41t-10-50v-650l7-21l18-54l24-72q13-39 24-73t20-59t10-30l-66-65H0V768h91l57 58l74-223q16-49 46-89t71-69t87-45t100-16h996q52 0 99 16t88 44t70 69t47 90l74 223l57-58h91v128zM526 512q-63 0-112 36t-70 95l-85 253h1530l-85-253q-20-59-69-95t-113-36zm882 1231l-104-207H744l-104 207v49h768zm512 49v-502l-6-18q-6-18-15-47t-21-61t-21-63t-17-51t-9-26H217q-2 5-9 26t-17 50t-21 63t-20 62t-16 46t-6 19v502h384v-79l152-305h720l152 305v79z"/></svg>',
-        "title" => "Vehicle",
-        "subItems" => ["All Vehicle", "Vehicle Types", "Add Vehicle"]
-    ],
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-		<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-	</g>
-</svg>',
-        "title" => "Linked Tables",
-        "subItems" => ["Policy – Policy Holder", "Policy Holder – Vehicle", "All-in-One Table"]
-    ],
-    [
-        "icon" => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 4a1 1 0 0 0-1 1c0 1.692-2.046 2.54-3.243 1.343a1 1 0 1 0-1.414 1.414C7.54 8.954 6.693 11 5 11a1 1 0 1 0 0 2c1.692 0 2.54 2.046 1.343 3.243a1 1 0 0 0 1.414 1.414C8.954 16.46 11 17.307 11 19a1 1 0 1 0 2 0c0-1.692 2.046-2.54 3.243-1.343a1 1 0 1 0 1.414-1.414C16.46 15.046 17.307 13 19 13a1 1 0 1 0 0-2c-1.692 0-2.54-2.046-1.343-3.243a1 1 0 0 0-1.414-1.414C15.046 7.54 13 6.693 13 5a1 1 0 0 0-1-1m-2.992.777a3 3 0 0 1 5.984 0a3 3 0 0 1 4.23 4.231a3 3 0 0 1 .001 5.984a3 3 0 0 1-4.231 4.23a3 3 0 0 1-5.984 0a3 3 0 0 1-4.231-4.23a3 3 0 0 1 0-5.984a3 3 0 0 1 4.231-4.231"/><path d="M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-2.828-.828a4 4 0 1 1 5.656 5.656a4 4 0 0 1-5.656-5.656"/></g></svg>',
-        "title" => "Settings",
-        "subItems" => ["Data Tables", "Edit Profile", "System Logs"]
-    ]
-];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Sidebar</title>
+    <title>Home | SafeDrive Vehicle Insurance System</title>
     <link href="./src/output.css" rel="stylesheet">
 
 </head>
 
 <body class="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text">
+
+
 
     <!-- Add overlay div -->
     <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="toggleSidebar()"></div>
@@ -78,17 +44,17 @@ $menuData = [
                 </svg>
             </button>
             <div class="flex items-center md:justify-end mt-9 mb-8">
-                <button
-                    class="text-gray-400 justify-start md:justify-end dark:text-gray-300 hover:text-light-accent dark:hover:text-dark-accent p-2 rounded">
-                    <!-- Back Button -->
+                <!-- Back Button -->
+                <button onclick="navigateBack()"
+                    class="text-gray-400 dark:text-gray-300 hover:text-light-accent dark:hover:text-dark-accent p-2 rounded">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
-                <button
-                    class="text-gray-400  justify-start md:justify-end dark:text-gray-300 hover:text-light-accent dark:hover:text-dark-accent p-2 rounded">
-                    <!-- Forward Button -->
+                <!-- Forward Button -->
+                <button onclick="navigateForward()"
+                    class="text-gray-400 dark:text-gray-300 hover:text-light-accent dark:hover:text-dark-accent p-2 rounded">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -109,54 +75,53 @@ $menuData = [
             <nav class="flex-1 menu mx-8">
                 <?php foreach ($menuData as $index => $section): ?>
                 <div class="mb-4">
-                    <!-- Menu Button -->
+                    <!-- Main Menu Button -->
                     <button id="menu-<?= $index ?>" onclick="toggleMenu(<?= $index ?>)" class="flex items-center justify-between gap-3 w-full text-left text-lg p-3 rounded relative 
-                <?= $section['title'] === $currentPage ? 'text-light-accent dark:text-dark-accent' : 'text-light-text dark:text-dark-text'; ?> 
-                hover:text-light-accent dark:hover:text-dark-accent">
-                        <!-- Icon and Title -->
-                        <div class="flex items-center gap-3">
+        <?= $section['title'] === $currentPage[0] ? 'text-light-accent dark:text-dark-accent' : 'text-light-text dark:text-dark-text' ?> 
+        hover:text-light-accent dark:hover:text-dark-accent">
+                        <a class="flex items-center gap-3">
                             <div class="w-6 h-6">
                                 <?= $section['icon']; ?>
                             </div>
                             <span><?= $section['title']; ?></span>
-                        </div>
+                        </a>
                         <!-- Chevron -->
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="w-4 h-4 transform transition-transform duration-200" id="chevron-<?= $index ?>"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
-                        <!-- Purple bar for active state -->
-                        <?php if ($section['title'] === $currentPage): ?>
-                        <span class="absolute left-0 top-0 bottom-0 w-1">
-                        </span>
-                        <?php endif; ?>
                     </button>
-                    <ul id="submenu-<?= $index ?>"
-                        class="ml-4 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out">
+
+
+                    <!-- Purple bar for active state -->
+                    <?php if ($section['title'] === $currentPage): ?>
+                    <span class="absolute left-0 top-0 bottom-0 w-1">
+                    </span>
+                    <?php endif; ?>
+                    <!-- Submenu -->
+                    <ul id="submenu-<?= $index ?>" class="ml-4 overflow-hidden <?= $section['title'] === $currentPage[0] ? 'max-h-screen' : 'max-h-0'; ?> 
+            transition-[max-height] duration-300 ease-in-out">
                         <?php foreach ($section['subItems'] as $subItem): ?>
                         <li class="relative group">
-                            <a href="#"
+                            <a href="<?= $subItem['url']; ?>"
                                 class="flex items-center gap-3 px-10 py-2 text-lg relative 
-                <?= $subItem === 'Overview' ? 'text-light-accent dark:text-dark-accent bg-light-border dark:bg-dark-sidebarHoverBg' : 'text-light-text dark:text-dark-text'; ?> 
-                hover:text-light-accent dark:hover:text-dark-accent hover:bg-light-border dark:hover:bg-dark-sidebarHoverBg rounded">
-                                <!-- Purple bar for hover and active submenu item -->
+            <?= $subItem['title'] === $currentPage[1] ? 'text-light-accent dark:text-dark-accent bg-light-border dark:bg-dark-sidebarHoverBg' : 'text-light-text dark:text-dark-text'; ?> 
+            hover:text-light-accent dark:hover:text-dark-accent hover:bg-light-border dark:hover:bg-dark-sidebarHoverBg rounded">
                                 <span class="absolute left-0 top-0 bottom-0 w-1 bg-light-accent dark:bg-dark-accent rounded-l transition-all duration-200
-                    <?= $subItem === 'Overview' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'; ?>">
+                <?= $subItem['title'] === $currentPage[1] ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'; ?>">
                                 </span>
-                                <?= $subItem; ?>
+                                <?= $subItem['title']; ?>
                             </a>
                         </li>
                         <?php endforeach; ?>
                     </ul>
-
-
                 </div>
                 <?php endforeach; ?>
             </nav>
 
-        </aside>
 
+        </aside>
         <!-- Main Content -->
         <main class="flex-1  min-h-screen overflow-hidden"
             style="margin-top: 20px; margin-left: 20px;margin-right: 20px;">
@@ -164,7 +129,7 @@ $menuData = [
                 <div class="flex items-center justify-between">
                     <div class=" items-center gap-3">
                         <h1 class="md:text-4xl text-3xl font-bold mb-3">Welcome Admin!</h1>
-                        <p class="md:text-md text-lg text-opacity-43 text-light-text dark:text-dark-textMuted">
+                        <p class="md:text-md text-sm text-opacity-43 text-light-text dark:text-dark-textMuted">
                             SafeDrive Vehicle and Automobile Insurance System
                         </p>
                     </div>
@@ -173,7 +138,7 @@ $menuData = [
 
                         <!-- Light/Dark Mode Toggle -->
                         <button id="mode-toggle" onclick="toggleDarkMode()"
-                            class="flex items-center justify-center w-10 h-10 rounded-full bg-light-sidebar dark:bg-dark-sidebar shadow hover:bg-light-accent dark:hover:bg-dark-accent">
+                            class="flex  items-center justify-center w-10 h-10 rounded-full bg-light-sidebar dark:bg-dark-sidebar shadow hover:bg-light-accent dark:hover:bg-dark-accent">
                             <!-- Light Mode Icon -->
                             <svg id="light-mode-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" class="block dark:hidden">
@@ -290,7 +255,7 @@ $menuData = [
 
             </section>
             <section>
-                <?php include 'chart.php'; ?>
+                <?php include 'components/chart.php'; ?>
             </section>
             <section>
                 <div class="mt-7">
@@ -368,7 +333,7 @@ $menuData = [
                 </div>
             </section>
             <section>
-                <?php include 'recent_cust_table.php'; ?>
+                <?php include 'components/recent_cust_table.php'; ?>
             </section>
 
 
@@ -377,6 +342,8 @@ $menuData = [
     </div>
 
     <script src="./src/script.js"></script>
+
+
 </body>
 
 </html>

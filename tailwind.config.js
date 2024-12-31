@@ -2,9 +2,17 @@ module.exports = {
   content: ["./*.{html,php}", "./src/**/*.{html,php,js}"], // Files Tailwind should scan
   darkMode: "class", // Enable class-based dark mode
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       fontFamily: {
         autorich: ['"Autorich"', "sans-serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       textOpacity: {
         43: "0.43",
@@ -22,6 +30,7 @@ module.exports = {
           cardStroke: "#343B4F",
           cardText: "#AEB9E1",
           sidebarHoverBg: "#0F1936",
+          tableBlue: "#18254D",
         },
         light: {
           background: "#F9FAFB",
@@ -46,5 +55,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [],
 };

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @font-face {
   font-family: "Autorich";
   src: url("./fonts/autorich_sans.ttf") format("truetype");
@@ -9,7 +9,17 @@
   font-style: normal;
 }
 
+@layer base {
+  html {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
 @layer components {
+  html {
+    @apply font-sans;
+  }
+
   .card {
     @apply max-w-sm rounded overflow-hidden shadow-lg bg-white p-6;
   }
@@ -24,6 +34,33 @@
 
   .brand {
     @apply font-autorich text-4xl text-white mt-5 flex items-center mb-4;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+
+  /* Hover effect for SVG paths */
+  a:hover svg path {
+    @apply fill-light-accent; /* Define your hover color here */
+  }
+
+  a:hover svg path.dark {
+    @apply dark:fill-dark-accent; /* Define your dark mode hover color */
+  }
+
+  /* Optional: Smooth transition */
+  svg path {
+    @apply transition: fill 0.2s ease-in-out;
+  }
+
+  th,
+  td {
+    @apply "rounded-tl-lg rounde
+    d-bl-lg rounded-tr-none rounded-br-none";
+  }
+  td aside {
+    @apply px-20;
   }
 
   #mode-transition-overlay {
@@ -63,6 +100,66 @@
 
   .animate-pulse-slow {
     animation: pulse 2s infinite;
+  }
+  /* Custom checkbox styles */
+  .checkbox-container {
+    @apply flex items-center gap-2 cursor-pointer;
+  }
+
+  .checkbox-input {
+    @apply appearance-none w-4 h-4 border-2 border-gray-300 rounded 
+         bg-white cursor-pointer relative transition-all duration-200 ease-in-out;
+  }
+
+  .checkbox-input:checked {
+    @apply bg-blue-500 border-blue-500;
+  }
+
+  .checkbox-input:checked::after {
+    content: "";
+    @apply absolute left-1 top-0.5 w-1.5 h-2 border-white border-r-2 border-b-2 transform rotate-45;
+  }
+
+  .checkbox-input:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+
+  /* Dark mode checkbox */
+  @media (prefers-color-scheme: dark) {
+    .checkbox-input {
+      @apply border-gray-600 bg-gray-800;
+    }
+
+    .checkbox-input:checked {
+      @apply bg-blue-500 border-blue-500;
+    }
+  }
+
+  /* Dropdown styles */
+  .dropdown-check-list {
+    @apply relative w-full;
+  }
+
+  .anchor {
+    @apply relative cursor-pointer flex justify-between items-center p-2 
+         border border-gray-200 rounded-lg bg-white transition-all duration-200;
+  }
+
+  .items {
+    @apply absolute w-full max-h-60 overflow-y-auto mt-1 border border-gray-200 
+         rounded-lg bg-white z-50 hidden shadow-lg;
+  }
+
+  .items.visible {
+    @apply block;
+  }
+
+  .item {
+    @apply p-2 transition-colors duration-200;
+  }
+
+  .item:hover {
+    @apply bg-gray-50;
   }
 
   .apexcharts-yaxis-label tspan,
