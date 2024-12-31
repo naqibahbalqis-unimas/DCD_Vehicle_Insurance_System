@@ -4,7 +4,8 @@
   },
   "dependencies": {
     "apexcharts": "^4.3.0",
-    "flowbite": "^2.5.2"
+    "flowbite": "^2.5.2",
+    "php-server": "^2.0.0"
   },
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
