@@ -5,9 +5,20 @@
   "dependencies": {
     "apexcharts": "^4.3.0",
     "flowbite": "^2.5.2",
-    "php-server": "^2.0.0"
+    "php-server": "^2.0.0",
+    "vite": "^6.0.6"
   },
   "scripts": {
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
-  }
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "name": "dcd",
+  "description": "��#\u0000 \u0000D\u0000C\u0000D\u0000_\u0000V\u0000e\u0000h\u0000i\u0000c\u0000l\u0000e\u0000_\u0000I\u0000n\u0000s\u0000u\u0000r\u0000a\u0000n\u0000c\u0000e\u0000_\u0000S\u0000y\u0000s\u0000t\u0000e\u0000m\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
