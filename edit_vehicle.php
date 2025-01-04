@@ -133,7 +133,7 @@ include 'components/menu_data.php';
             <section class="greeting mb-8 text-left ml-5 ">
                 <div class="flex items-center justify-between">
                     <div class=" items-center gap-3">
-                        <h1 class="md:text-4xl text-3xl font-bold mb-3">Add Policy </h1>
+                        <h1 class="md:text-4xl text-3xl font-bold mb-3">Edit Vehicle </h1>
                         <p class="md:text-md text-sm text-opacity-43 text-light-text dark:text-dark-textMuted">
                             SafeDrive Vehicle and Automobile Insurance System
                         </p>
@@ -181,7 +181,7 @@ include 'components/menu_data.php';
 
             <section>
                 <div flex items-center items-center justify-between>
-                    <h1 class="text-4xl text-center font-bold"> Search Policies </h1>
+                    <h1 class="text-4xl text-center font-bold"> Search Policies, Policy Holder, Reg Number </h1>
                     <div class="flex justify-center items-center">
                         <input type="text"
                             class="w-9/12 h-14 mt-10 px-10 py-4 border dark:placeholder-dark-cardText dark:bg-dark-cardBg dark:border-dark-cardStroke bg-light-sidebar shadow-xl  border-gray-300 rounded-tl-lg rounded-bl-lg rounded-tr-none rounded-br-none"
